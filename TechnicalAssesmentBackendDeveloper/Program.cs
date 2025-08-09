@@ -1,5 +1,6 @@
 ﻿class Program
 {
+     //private List<String> items = new List<String>();
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Item Manager!");
@@ -7,6 +8,7 @@
         ItemManager manager = new ItemManager();
 
         // Part One: Fix the NullReferenceException
+        List<string> items = new List<string>();
         // This will throw a NullReferenceException
         manager.AddItem("Apple");
         manager.AddItem("Banana");
@@ -26,7 +28,7 @@
 
 public class ItemManager
 {
-    private List<string> items;
+    private List<string> items = new List<string>();
 
     public void AddItem(string item)
     {
@@ -56,7 +58,7 @@ public class ItemManager
 
 public class ItemManager<T>
 {
-    private List<T> items;
+    private List<T> items = new List<T>();
 
     public void AddItem(T item)
     {
