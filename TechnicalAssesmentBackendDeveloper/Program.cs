@@ -89,7 +89,14 @@ public class ItemManager
     // TODO: Implement this method
     public void RemoveItem(string item)
     {
-         items.Remove(item);
+         if (items.Remove(item))
+         {
+               Console.Writeline(item + "removed.");
+         }
+         else
+         {
+               Console.WriteLine(item + "not found.");
+         }
     }
 
     public void ClearAllItems()
