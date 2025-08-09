@@ -1,9 +1,9 @@
-﻿namespace TechnicalAssesmentBackendDeveloper;
+﻿namespace TechnicalAssessmentBackendDeveloper;
 
 class Booking
 {
-    public string guestname;
-    public string roomnumber;
+    public string guestname = "";
+    public string roomnumber = "";
     public DateTime checkindate;
     public DateTime checkoutdate;
     public int totaldays;
@@ -24,7 +24,7 @@ class Booking
         totalamount = totaldays * rateperday;
         totalamount = totalamount - (totalamount * discount / 100);
 
-        LogBookingDetailsAsync();
+        await LogBookingDetailsAsync();
 
         Console.WriteLine("Room Booked for " + guestname);
         Console.WriteLine("Room No: " + roomnumber);
@@ -57,10 +57,10 @@ class Booking
 
 public static class AppHost
 {
-    static void Run(string[] args)
+    public static void Run()
     {
         Booking b = new Booking();
-        b.BookRoom("Alice", "101", DateTime.Now, DateTime.Now.AddDays(3), 150.5, 10);
+        await b.BookRoom("Alice", "101", DateTime.Now, DateTime.Now.AddDays(3), 150.5, 10);
         b.Cancel();
     }
 }
