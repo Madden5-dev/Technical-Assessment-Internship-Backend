@@ -11,7 +11,7 @@ class Booking
     public double discount;
     public double totalamount;
 
-    public void BookRoom(string name, string room, DateTime checkin, DateTime checkout, double rate, double discountRate)
+    public static async Task BookRoom(string name, string room, DateTime checkin, DateTime checkout, double rate, double discountRate)
     {
         guestname = name;
         roomnumber = room;
@@ -57,7 +57,7 @@ class Booking
 
 public static class AppHost
 {
-    public static void Run()
+    public static async Task Run(string[] args)
     {
         Booking b = new Booking();
         await b.BookRoom("Alice", "101", DateTime.Now, DateTime.Now.AddDays(3), 150.5, 10);
