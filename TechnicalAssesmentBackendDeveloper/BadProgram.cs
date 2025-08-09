@@ -11,7 +11,7 @@ class Booking
     public double discount;
     public double totalamount;
 
-    public static async Task BookRoom(string name, string room, DateTime checkin, DateTime checkout, double rate, double discountRate)
+    public async Task BookRoom(string name, string room, DateTime checkin, DateTime checkout, double rate, double discountRate)
     {
         guestname = name;
         roomnumber = room;
@@ -43,8 +43,8 @@ class Booking
 
     public void Cancel()
     {
-        guestname = null;
-        roomnumber = null;
+        guestname = "";
+        roomnumber = "";
         checkindate = DateTime.MinValue;
         checkoutdate = DateTime.MinValue;
         rateperday = 0;
