@@ -29,7 +29,18 @@
 
         // Part Four (Bonus): Implement an interface IItemManager and make ItemManager implement it.
         // TODO: Implement this part four.
+        IItemManager InterfaceManager = new ItemManager();
+        InterfaceManager.AddItem("Mango");
+        InterfaceManager.AddItem("Rambutan");
+        InterfaceManager.PrintAllItems();
     }
+}
+
+public interface IItemManager
+{
+    void AddItem(string item);
+    void PrintAllItems();
+    void RemoveItem(string item);
 }
 
 public class Fruit
