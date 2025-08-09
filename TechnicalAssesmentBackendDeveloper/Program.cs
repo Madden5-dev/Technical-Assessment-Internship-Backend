@@ -91,7 +91,7 @@ public class ItemManager
     {
          if (items.Remove(item))
          {
-               Console.Writeline(item + "removed.");
+               Console.WriteLine(item + "removed.");
          }
          else
          {
